@@ -1,47 +1,152 @@
-/* 1. Use a more-intuitive box-sizing model */
+@font-face {
+  font-family: norse-font;
+  src: url(font/Norse-Bold.otf);
+}
 *, *::before, *::after {
     box-sizing: border-box;
   }
-  
-  /* 2. Remove default margin */
   * {
     margin: 0;
   }
-  
   body {
-    /* 3. Add accessible line-height */
     line-height: 1.5;
-    /* 4. Improve text rendering */
     -webkit-font-smoothing: antialiased;
   }
-  
-  /* 5. Improve media defaults */
   img, picture, video, canvas, svg {
     display: block;
     max-width: 100%;
   }
-  
-  /* 6. Inherit fonts for form controls */
   input, button, textarea, select {
     font: inherit;
   }
-  
-  /* 7. Avoid text overflows */
   p, h1, h2, h3, h4, h5, h6 {
     overflow-wrap: break-word;
   }
-  
-  /* 8. Improve line wrapping */
   p {
     text-wrap: pretty;
   }
   h1, h2, h3, h4, h5, h6 {
     text-wrap: balance;
   }
-  
-  /*
-    9. Create a root stacking context
-  */
   #root, #__next {
     isolation: isolate;
+  }
+  
+  body {
+    display: flex;
+  }
+
+  .sidebar {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    background-image: url(img/food.jpg);
+    background-size: cover;
+    height: 100vh;
+  }
+  .banner {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(25, 25, 25, 30%);
+    height: 20vh;
+  }
+  .banner > img {
+    width:  auto;
+    height: 18vh;
+  }
+  .banner > h1 {
+    font-size: 15vh;
+    font-family: norse-font, sans-serif;
+    color: white;
+  }
+  .credits {
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    font-size: 1vw;
+    color: white;
+  }
+  .credits > a {
+    text-decoration: none;
+    color: inherit;
+  }
+  .main {
+    flex: 3;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .header {
+    flex: 1;
+    margin-top: 10vh;
+    padding: 0 2vw;
+    font-size: 2vw;
+  }
+  .content {
+    flex: 2;
+  }
+  .signup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .signup-box {
+    flex: 1;
+    width: 100%;
+    min-width: 50%;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10%;
+    padding-left: 2vw;
+    margin-bottom: 5%;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  }
+  .form-section {
+    flex: 1;
+    display: flex;
+  }
+  .input-group {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  label,input{
+    display: block;
+  }
+  input{
+    width: 70%;
+    border-radius: 5px;
+    border: 1px inset black;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 6px 3px, rgba(0, 0, 0, 0.09) 0px 8px 4px inset;
+  }
+  input:valid {
+    border: 1px solid green;
+  }
+  input:invalid {
+    border: 1px solid red;
+  }
+  .form-footer{
+    display: flex;
+    min-height: 10vh;
+    flex-direction: column;
+  }
+  .signup-btn {
+    background-color: green;
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 6px 3px, rgba(0, 0, 0, 0.09) 0px 8px 4px;
+  }
+  .signup-btn:active {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  }
+  .login > a {
+    text-decoration: none;
+    color: green;
   }
